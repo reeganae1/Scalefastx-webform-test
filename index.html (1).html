@@ -837,7 +837,7 @@ footer p{color:var(--muted);font-size:.8rem}
       <p class="ssub">Tell us your challenge and we'll respond within 24 hours with a personalised action plan.</p>
     </div>
     <div class="contact-grid">
-      <form class="cf rev-l" id="contact-form" action="https://script.google.com/macros/s/AKfycbzGUhQk_y8Fqgla696CJoKUYLyS0ew8dqkskgRteUFbzcz-P0ifcVpTwJmUXQ64C30grQ/exec" method="POST">
+      <form class="cf rev-l" id="contact-form" action="https://script.google.com/macros/s/AKfycbz-ZvnHy8RbQMoa7mhFUiFYl7WSaS1nPpC25E2Y3MtCfyFFY_ZlcFoIDCo0Wuzyi7g/exec" method="POST">
         <div class="fr">
           <div class="fg"><label>Full Name *</label><input type="text" name="name" placeholder="Rajesh Kumar" required></div>
           <div class="fg"><label>Company</label><input type="text" name="company" placeholder="Acme Corp"></div>
@@ -1017,7 +1017,7 @@ function toggleCurrency(){isUSD=!isUSD;updatePrices();}
 /* ── CONTACT FORM (submits to Google Apps Script) ── */
 const form=document.getElementById('contact-form');
 const fmsg=document.getElementById('form-msg');
-const webAppUrl='https://script.google.com/macros/s/AKfycbzGUhQk_y8Fqgla696CJoKUYLyS0ew8dqkskgRteUFbzcz-P0ifcVpTwJmUXQ64C30grQ/exec';
+const webAppUrl='https://script.google.com/macros/s/AKfycbz-ZvnHy8RbQMoa7mhFUiFYl7WSaS1nPpC25E2Y3MtCfyFFY_ZlcFoIDCo0Wuzyi7g/exec';
 form.querySelectorAll('input,select,textarea').forEach(f=>{
   const lbl=f.closest('.fg')?.querySelector('label');
   f.addEventListener('focus',()=>{if(lbl)lbl.style.color='var(--sky)';f.style.borderColor='var(--sky)'});
