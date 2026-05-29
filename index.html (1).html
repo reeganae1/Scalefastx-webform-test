@@ -1027,9 +1027,17 @@ form.addEventListener('submit',async e=>{
   e.preventDefault();
   const btn=form.querySelector('.submit-btn');
   const name=form.querySelector('[name=name]').value||'there';
+  const payload=new URLSearchParams(new FormData(form));
+  payload.append('submittedAt',new Date().toISOString());
+  payload.append('source','ScaleFastX website');
   btn.innerHTML='⏳ Sending…';btn.disabled=true;fmsg.style.display='none';
   try{
-    await fetch(webAppUrl,{method:'POST',body:new FormData(form),mode:'no-cors'});
+    await fetch(webAppUrl,{
+      method:'POST',
+      body:payload,
+      mode:'no-cors',
+      headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'}
+    });
     fmsg.style.cssText='display:block;color:#10B981;font-size:.85rem;font-weight:600;padding:10px 14px;border-radius:8px;border:1px solid rgba(16,185,129,.3);background:rgba(16,185,129,.07)';
     fmsg.textContent='✅ Thank you, '+name+'! We\'ll respond within 24 hours with a personalised action plan. 🚀';
     form.reset();miniConfetti();
@@ -1153,4 +1161,5 @@ function toast(msg){let el=document.getElementById('sfx-toast');if(!el){el=docum
 </script>
 </body>
 </html>
+
 
